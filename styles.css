@@ -6,19 +6,18 @@ body, html {
     background-image: url("Untitled design (2).png");
     height: 100%;
     width: 100%;
-    background-size: cover; /* Cover the entire viewport */
+    background-size: cover;
     background-repeat: no-repeat;
-    animation: scrollBackground 30s linear infinite; /* Adjust the duration as needed */
+    animation: scrollBackground 30s linear infinite; 
 }
 
-/* The rest of your CSS remains unchanged */
 
 @keyframes scrollBackground {
     0% {
         background-position: 0 0;
     }
     100% {
-        background-position: 0 100%; /* Scroll down to cover the entire background */
+        background-position: 0 100%; 
     }
 }
 
@@ -31,7 +30,7 @@ body, html {
     margin-left: 400px;
     width:50%;
     
-    /* background-color: #87CEEB; */
+    
     border: 5px solid black;
     background-color: aliceblue;
     border-radius: 50px;
@@ -50,7 +49,7 @@ button {
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;
 }
-/* Add the styles for the forecast section in styles.css */
+
 .forecast-container {
     display: flex;
     justify-content: space-around;
