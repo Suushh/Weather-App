@@ -14,7 +14,7 @@ function getWeather() {
         .then(response => response.json())
         .then(data => {
             displayWeather(data);
-            // Show toggle unit and get forecast buttons
+            
             document.querySelector('.toggle-unit-container').style.display = 'block';
             document.getElementById('getForecastButton').style.display = 'inline-block';
         })
@@ -27,15 +27,14 @@ let isCelsius = true;
 
 function toggleTemperatureUnit() {
     isCelsius = !isCelsius;
-    getWeather(); // Refresh weather data with the new unit
-    // Update the button label
+    getWeather(); 
     document.getElementById('toggleUnitButton').innerText = isCelsius ? "Switch to Fahrenheit" : "Switch to Celsius";
 }
 
 function displayWeather(data) {
     const weatherInfo = document.getElementById('weatherInfo');
 
-    // const temperature = Math.round(data.main.temp - 273.15); // Convert Kelvin to Celsius
+   
     const humidity = data.main.humidity;
     const windSpeed = data.wind.speed;
     const weatherDescription = data.weather[0].description;
@@ -89,14 +88,14 @@ function getWeatherForecast() {
 
 function displayWeatherForecast(data) {
     const forecastContainer = document.getElementById('forecast');
-    forecastContainer.innerHTML = ''; // Clear previous forecast data
+    forecastContainer.innerHTML = ''; 
 
-    const forecastDays = Math.min(5, Math.floor(data.list.length / 8)); // Display forecast for the next 5 days
+    const forecastDays = Math.min(5, Math.floor(data.list.length / 8));
 
     for (let i = 0; i < forecastDays; i++) {
-        const forecastData = data.list[i * 8]; // Take data for every 8th interval (24 hours)
-        const forecastDate = new Date(forecastData.dt * 1000); // Convert timestamp to Date object
-        const forecastTemperature = Math.round(forecastData.main.temp - 273.15); // Convert Kelvin to Celsius
+        const forecastData = data.list[i * 8]; 
+        const forecastDate = new Date(forecastData.dt * 1000); 
+        const forecastTemperature = Math.round(forecastData.main.temp - 273.15); 
         const forecastWeatherDescription = forecastData.weather[0].description;
         const forecastIcon = forecastData.weather[0].icon;
         const forecastIconUrl = `http://openweathermap.org/img/w/${forecastIcon}.png`;
