@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Weather App</title>
+</head>
+<body>
+    
+<!-- Modify the initial HTML in index.html -->
+<div class="weather-container">
+    <h1 style="font-size:50px;"sty>Weather Forecast</h1>
+    <input type="text" id="locationInput" placeholder="Enter city or zip code" style="font-size: 25px; width: 300px; height:30px;">
+    <button onclick="getWeather()" style="width: 170px; height: 35px;">Get Weather</button>
+
+    <div id="weatherInfo">
+        <!-- Weather data will be displayed here -->
+    </div>
+
+    <div class="toggle-unit-container" style="display: none;">
+        <button id="toggleUnitButton" onclick="toggleTemperatureUnit()">Switch to Fahrenheit</button>
+    </div>
+
+    <button id="getForecastButton" onclick="getWeatherForecast()" style="display: none;">Get Forecast</button>
+
+    <div id="forecast" class="forecast-container"></div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
